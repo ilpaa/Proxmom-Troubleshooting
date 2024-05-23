@@ -43,8 +43,14 @@ network:
 Change `dhcp4: yes` to:
 
 ```bash
-addresses: [your_static_ip/your_subnet_mask]
-gateway4: your_gateway_ip
+dhcp4: no
+      addresses:
+        - 192.168.1.100/24
+      gateway4: 192.168.1.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
 ```
 
 Replace your_static_ip, your_subnet_mask, and your_gateway_ip with your desired static IP address, subnet mask, and gateway IP address respectively.
